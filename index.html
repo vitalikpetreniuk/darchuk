@@ -567,7 +567,7 @@
 							<div id="step1" class="count-step count-step-1 active">
 								<div class="calc calc-1"></div>
 								<h4>Организационно-правовая собственность</h4>
-								<div class="count-check-list">
+								<div class="count-check-list count-list-first">
 									<div class="count-check-item">
 										<input id="count1" type="radio" name="count1">
 										<label for="count1">ООО</label>
@@ -579,13 +579,13 @@
 								</div>
 								<div class="count-buttons">
 									<button type="button" class="count-step-back">назад</button>
-									<button type="button" class="count-step-forward btn-custom inv active">далее</button>
+									<button type="button" class="count-step-forward count-step-first btn-custom inv">далее</button>
 								</div>
 							</div>
 							<div id="step2" class="count-step count-step-2">
 								<div class="calc calc-2"></div>
 								<h4>Форма налогообложения</h4>
-								<div class="count-check-list">
+								<div class="count-check-list count-list-second">
 									<div class="count-check-item">
 										<input id="count3" type="radio" name="count2">
 										<label for="count3">Общая система</label>
@@ -605,7 +605,7 @@
 								</div>
 								<div class="count-buttons">
 									<button type="button" class="count-step-back active">назад</button>
-									<button type="button" class="count-step-forward btn-custom inv active">далее</button>
+									<button type="button" class="count-step-forward count-step-second btn-custom inv">далее</button>
 								</div>
 							</div>
 							<div id="step3" class="count-step count-step-3">
@@ -615,19 +615,19 @@
 									<div class="count-range-item">
 										<div class="count-range-item-title"><img src="img/team.svg" alt="">Сотрудники компании</div>
 										<div class="range-control">
-											<input type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="1"/>
+											<input data-id="range1" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="1"/>
 										</div>
 									</div>
 									<div class="count-range-item">
 										<div class="count-range-item-title"><img src="img/debt.svg">Количество операций в месяц</div>
 										<div class="range-control">
-											<input type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="1"/>
+											<input data-id="range2" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="1"/>
 										</div>
 									</div>
 								</div>
 								<div class="count-buttons">
 									<button type="button" class="count-step-back active">назад</button>
-									<button type="button" class="count-step-forward btn-custom inv active">далее</button>
+									<button type="button" class="count-step-forward count-step-third btn-custom inv">далее</button>
 								</div>
 							</div>
 							<div id="step4" class="count-step count-step-4">
@@ -660,22 +660,30 @@
 										<ul>
 											<li>
 												<div>Организационно-правовая собственность:</div>
-												<div>ООО</div>
+												<div class="count-data-first">ООО</div>
 											</li>
 											<li>
 												<div>Форма налогообложения:</div>
-												<div>Общая + НДС</div>
+												<div class="count-data-second">Общая + НДС</div>
 											</li>
 											<li>
 												<div>Количество сотрудников:</div>
-												<div>10</div>
+												<div data-for="range1">10</div>
 											</li>
 											<li>
 												<div>Операций в месяц</div>
-												<div>20</div>
+												<div data-for="range2">20</div>
 											</li>
-											<li>
+											<li data-for="tumb1" class="hidden">
 												<div>ВЭД:</div>
+												<div>ДА</div>
+											</li>
+											<li data-for="tumb2" class="hidden">
+												<div>Автомобили:</div>
+												<div>ДА</div>
+											</li>
+											<li data-for="tumb3" class="hidden">
+												<div>ННБФ:</div>
 												<div>ДА</div>
 											</li>
 										</ul>

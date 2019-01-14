@@ -106,4 +106,43 @@ $(function() {
         $('.lang').toggle('fast');
     });
 
+    $('.count input').on('input', function () {
+        if($('#count1').is(':checked') || $('#count2').is(':checked')){
+            $('.count-step-first').addClass('active');
+        }
+        if($('#count3').is(':checked') || $('#count4').is(':checked') || $('#count5').is(':checked') || $('#count6').is(':checked')){
+            $('.count-step-second').addClass('active');
+        }
+    });
+    $('.range-control input').each(function () {
+        var countData = $(this).val();
+        var countName = $(this).attr('data-id');
+        $('[data-for="' + countName + '"]').text(countData);
+        $(this).on('change', function () {
+            $('.count-step-third').addClass('active');
+            var countData = $(this).val();
+            var countName = $(this).attr('data-id');
+            $('[data-for="' + countName + '"]').text(countData);
+        });
+    });
+
+    $('.count-list-first input').on('input', function () {
+        var countData = $(this).closest('.count-check-item').find('label').text();
+        $('.count-data-first').text(countData);
+    });
+
+    $('.count-list-second input').on('input', function () {
+        var countData = $(this).closest('.count-check-item').find('label').text();
+        $('.count-data-second').text(countData);
+    });
+
+    $('.count-tumb-item input').on('input', function () {
+        var countName = $(this).attr('id');
+        if($(this).is(':checked')){
+            $('[data-for="' + countName + '"]').removeClass('hidden');
+        }else{
+            $('[data-for="' + countName + '"]').addClass('hidden');
+        }
+    });
+
 });
